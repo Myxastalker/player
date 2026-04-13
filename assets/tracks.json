@@ -1,0 +1,20 @@
+{
+  "tracks": [
+    {
+      "id": "track_001",
+      "title": "Neon Dreams",
+      "artist": "Synthwave Collective",
+      "album": "Digital Horizons",
+      "cover": "assets/images/Mood.jpeg",
+      "src": "assets/playlist/0.m3u8"
+    },
+    {
+      "id": "track_002",
+      "title": "Orbital Drift",
+      "artist": "Cosmo Unit",
+      "album": "Space Echoes",
+      "cover": "assets/images/Mood.jpeg",
+      "src": "assets/playlist/1.m3u8"
+    }
+  ]
+}

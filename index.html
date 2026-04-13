@@ -1,1 +1,83 @@
-<button>Hi</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cosmic Player</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="space">
+
+    <div id="settings-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Settings</h3>
+            <div class="theme-selector">
+                <label>Theme:</label>
+                <select id="theme-select">
+                    <option value="space">Deep Space (Blue)</option>
+                    <option value="dark">Dark Matter (Black)</option>
+                    <option value="neon">Neon Void (Purple)</option>
+                </select>
+            </div>
+            <button id="close-settings">Close</button>
+        </div>
+    </div>
+
+    <section id="library-screen" class="screen">
+        <header>
+            <h1>Your Library</h1>
+            <button class="icon-btn settings-btn" id="open-settings"></button>
+        </header>
+        <div id="playlist-container"></div>
+    </section>
+
+    <section id="full-player" class="player-overlay">
+        <button class="close-btn" id="collapse-btn">▼</button>
+        
+        <div class="full-content">
+            <div id="full-cover" class="main-cover"></div>
+            <div class="full-info">
+                <h2 id="full-title">Track Title</h2>
+                <p id="full-artist">Artist Name</p>
+            </div>
+
+            <div class="progress-block">
+                <div class="progress-wrapper">
+                    <div id="buffer-fill" class="buffer-bar"></div>
+                    <input type="range" id="progress" value="0" step="0.1" max="100">
+                </div>
+                <div class="time">
+                    <span id="cur-time">0:00</span>
+                    <span id="dur-time">0:00</span>
+                </div>
+            </div>
+
+            <div class="main-controls">
+                <button class="icon-btn loop" id="loop-btn"></button>
+                <button class="icon-btn prev" id="prev-btn"></button>
+                <button class="icon-btn play-main" id="play-btn"></button>
+                <button class="icon-btn next" id="next-btn"></button>
+            </div>
+        </div>
+    </section>
+
+    <div id="mini-player" class="mini-player hidden">
+        <div class="mini-info" id="expand-trigger">
+            <img id="mini-cover" src="" alt="">
+            <div class="text">
+                <div id="mini-title">Track</div>
+                <div id="mini-artist">Artist</div>
+            </div>
+        </div>
+        <div class="mini-actions">
+            <button class="icon-btn play-mini" id="mini-play-btn"></button>
+        </div>
+        <div class="mini-progress-bar"><div id="mini-progress-fill"></div></div>
+    </div>
+
+    <audio id="audio-element"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
+
